@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcelle Silva - Desenvolvedora Full Stack</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        .resume-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .left-sidebar {
+            background: #f8f8f8;
+            padding: 40px 30px;
+            position: relative;
+        }
+
+        .hello-section {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            position: absolute;
+            left: 20px;
+            top: 40px;
+            font-size: 3rem;
+            font-weight: 900;
+            color: #333;
+            letter-spacing: 8px;
+        }
+
+        .photo-section {
+            margin: 80px 0 40px 0;
+            text-align: center;
+        }
+
+        .profile-photo {
+            width: 200px;
+            height: 200px;
+            background: #ddd;
+            border: 3px solid #333;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 14px;
+            border-radius: 0;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .quote {
+            font-size: 14px;
+            color: #666;
+            font-style: italic;
+            text-align: left;
+            max-width: 200px;
+            margin: 0 auto;
+        }
+
+        .values-section {
+            margin: 40px 0;
+        }
+
+        .section-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            font-size: 13px;
+            color: #555;
+        }
+
+        .languages-section {
+            margin: 40px 0;
+        }
+
+        .language-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .language-name {
+            font-size: 14px;
+            color: #333;
+        }
+
+        .language-bar {
+            width: 100px;
+            height: 4px;
+            background: #e0e0e0;
+            position: relative;
+        }
+
+        .language-progress {
+            height: 100%;
+            background: #333;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .skills-section {
+            margin: 40px 0;
+        }
+
+        .skills-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .right-content {
+            padding: 40px;
+            position: relative;
+        }
+
+        .header-info {
+            margin: 80px 0 40px 0;
+        }
+
+        .name {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .personal-info {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            font-size: 14px;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .education-section {
+            margin: 40px 0;
+        }
+
+        .education-item {
+            margin-bottom: 30px;
+        }
+
+        .degree-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .institution {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .year {
+            font-size: 13px;
+            color: #888;
+        }
+
+        .experience-section {
+            margin: 40px 0;
+        }
+
+        .experience-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .job-item {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .job-item:last-child {
+            border-bottom: none;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+        }
+
+        .job-title {
+            font-weight: bold;
+            color: #333;
+            font-size: 15px;
+        }
+
+        .job-date {
+            font-size: 13px;
+            color: #666;
+            white-space: nowrap;
+        }
+
+        .company-name {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .job-description {
+            font-size: 13px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .decorative-square {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #333;
+        }
+
+        .square-top {
+            top: 20px;
+            left: 20px;
+        }
+
+        .square-bottom {
+            bottom: 20px;
+            right: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .resume-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hello-section {
+                writing-mode: horizontal-tb;
+                text-orientation: unset;
+                position: relative;
+                left: 0;
+                top: 0;
+                font-size: 2rem;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            .photo-section {
+                margin: 20px 0;
+            }
+
+            .profile-photo {
+                width: 150px;
+                height: 150px;
+            }
+
+            .header-info {
+                margin: 20px 0;
+                text-align: center;
+            }
+
+            .name {
+                font-size: 2rem;
+            }
+
+            .left-sidebar,
+            .right-content {
+                padding: 20px;
+            }
+
+            .job-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <div class="decorative-square square-top"></div>
+        <div class="decorative-square square-bottom"></div>
+        
+        <div class="left-sidebar">
+            <div class="hello-section"></div>
+            
+            <div class="photo-section">
+                <div class="profile-photo" style="background-image: url('img/foto.jpg');">
+                    <!-- Se não tiver foto, o texto aparece -->
+                    <span style="background: rgba(255,255,255,0.8); padding: 10px; text-align: center; display: none;">ADICIONE<br>SUA FOTO</span>
+                </div>
+                <div class="quote"></div>
+            </div>
+
+            <div class="values-section">
+                <h3 class="section-title"></h3>
+                <div class="values-grid">
+                    <div>Responsabilidade</div>
+                    <div>Dedicação</div>
+                    <div>Pontualidade</div>
+                    <div>Proatividade</div>
+                    <div>Criatividade</div>
+                    <div>Curiosidade</div>
+                    <div>Inovação</div>
+                    <div>Organização</div>
+                    <div>Colaboração</div>
+                </div>
+            </div>
+
+            <div class="languages-section">
+                <h3 class="section-title">Idiomas</h3>
+                <div class="language-item">
+                    <span class="language-name">Português</span>
+                    <div class="language-bar">
+                        <div class="language-progress" style="width: 100%;"></div>
+                    </div>
+                </div>
+                <div class="language-item">
+                    <span class="language-name">Inglês</span>
+                    <div class="language-bar">
+                        <div class="language-progress" style="width: 40%;"></div>
+                    </div>
+                </div>
+                <div class="language-item">
+                    <span class="language-name">Espanhol</span>
+                    <div class="language-bar">
+                        <div class="language-progress" style="width: 40%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skills-section">
+                <h3 class="section-title">Skills</h3>
+                <div class="skills-grid">
+                    <div>Lógica de Programação</div>
+                    <div>POO</div>
+                    <div>HTML, CSS e JavaScript</div>
+                    <div>Java</div>
+                    <div>Python</div>
+                    <div>Node.js</div>
+                    <div>Git/GitHub</div>
+                    <div>Desenvolvimento de APIs</div>
+                    <div>Operações CRUD</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-content">
+            <div class="header-info">
+                <h1 class="name">Marcelle Silva</h1>
+                <div class="personal-info">
+                  <strong> Desenvolvedora Full Stack em Formação<br></strong> 
+                </div>
+                <div class="contact-info">
+                    devmarcelle94@gmail.com<br>
+                    +55 (51) 99462-2529<br>
+                    <a href="https://marcelledev.github.io/Marcelle.dev/" target="_blank">
+    marcelledev.github.io/Marcelle.dev/
+  </a>
+                </div>
+            </div>
+
+            <div class="education-section">
+                <div class="education-item">
+                    <h3 class="degree-title">Formação</h3>
+                    <div class="institution"><strong>Sistemas para Internet</strong></div>
+                    <div class="institution">Faculdade Estácio</div>
+                    <div class="year">Em andamento</div>
+                </div>
+
+                <div class="education-item">
+                    <h3 class="degree-title"></h3>
+                    <div class="institution"><strong>Desenvolvimento Java</strong></div>
+                    <div class="institution">Instituto Matera</div>
+                    <div class="year">2025</div>
+                </div>
+
+                <div class="education-item">
+                    <h3 class="degree-title"></h3>
+                    <div class="institution"><strong>Eu ProgrAmo: Minha Primeira API</strong></div>
+                    <div class="institution">PrograMaria</div>
+                    <div class="year">2024</div>
+                </div>
+            </div>
+
+            <div class="experience-section">
+                <h2 class="experience-title">Experiência<br></h2>
+                
+                <div class="job-item">
+                    <div class="job-header">
+                        <div class="job-title">Desenvolvedora Java | Estudante</div>
+                        <div class="job-date">2025</div>
+                    </div>
+                    <div class="company-name">Instituto Matera </div>
+                    <div class="job-description">
+                        Desenvolvi aplicações utilizando Java, aplicando conceitos de orientação a objetos, estruturas de repetição e condicionais. Criei projetos práticos com foco em lógica e boas práticas, aprimorando minha base em programação back-end.
+                    </div>
+                </div>
+
+                <div class="job-item">
+                    <div class="job-header">
+                        <div class="job-title">Desenvolvedora | Estudante</div>
+                        <div class="job-date">2024</div>
+                    </div>
+                    <div class="company-name">Eu ProgrAmo - PrograMaria</div>
+                    <div class="job-description">
+                        Desenvolvi uma API utilizando Node.js e Express, implementando rotas e métodos HTTP. Aprimorei a segurança e implementei o deploy da aplicação, garantindo sua acessibilidade online.
+                    </div>
+                </div>           
+                                        
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
